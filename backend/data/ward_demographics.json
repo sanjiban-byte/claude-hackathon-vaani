@@ -1,0 +1,44 @@
+{
+  "ward": "4090",
+  "ward_name": "G/North (Dharavi)",
+  "total_population": 850000,
+  "active_proposal": {
+    "title": "Dharavi Road Widening & Auto Stand Relocation Proposal",
+    "document": "BMC_Ward4090_RoadWidening_2024.pdf",
+    "stage": "Committee Review",
+    "stage_index": 2,
+    "total_stages": 4,
+    "stages": ["Proposal", "Committee Review", "General Body Meeting", "Resolution"],
+    "next_stage": "General Body Meeting",
+    "days_until_gbm": 18,
+    "introduced_date": "2024-03-01",
+    "gbm_date": "2024-04-15"
+  },
+  "groups": {
+    "auto_driver": {
+      "label": "Auto Rickshaw Drivers",
+      "estimated_count": 8000,
+      "primary_language": "Hindi"
+    },
+    "street_vendor": {
+      "label": "Street Vendors",
+      "estimated_count": 12000,
+      "primary_language": "Marathi"
+    },
+    "homeowner": {
+      "label": "Property Owners",
+      "estimated_count": 45000,
+      "primary_language": "Mixed"
+    },
+    "tenant": {
+      "label": "Tenants / Renters",
+      "estimated_count": 95000,
+      "primary_language": "Hindi"
+    },
+    "elderly_resident": {
+      "label": "Senior Citizens (60+)",
+      "estimated_count": 38000,
+      "primary_language": "Marathi"
+    }
+  }
+}

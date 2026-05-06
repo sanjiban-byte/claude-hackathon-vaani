@@ -1,0 +1,62 @@
+[
+  {
+    "id": "auto_driver",
+    "label": "Auto Driver",
+    "occupation": "Auto Rickshaw Driver",
+    "income_bracket": "low",
+    "language": "Hindi",
+    "housing": "tenant",
+    "ward": "197",
+    "ward_name": "Dharavi",
+    "age_bracket": "30-45",
+    "dependents": 3
+  },
+  {
+    "id": "street_vendor",
+    "label": "Street Vendor",
+    "occupation": "Street Food Vendor",
+    "income_bracket": "low",
+    "language": "Marathi",
+    "housing": "tenant",
+    "ward": "197",
+    "ward_name": "Dharavi",
+    "age_bracket": "25-40",
+    "dependents": 2
+  },
+  {
+    "id": "homeowner",
+    "label": "Homeowner",
+    "occupation": "Small Business Owner",
+    "income_bracket": "middle",
+    "language": "English",
+    "housing": "owner",
+    "ward": "197",
+    "ward_name": "Dharavi",
+    "age_bracket": "40-55",
+    "dependents": 4
+  },
+  {
+    "id": "tenant",
+    "label": "Tenant / Renter",
+    "occupation": "Factory Worker",
+    "income_bracket": "low",
+    "language": "Hindi",
+    "housing": "tenant",
+    "ward": "197",
+    "ward_name": "Dharavi",
+    "age_bracket": "20-35",
+    "dependents": 1
+  },
+  {
+    "id": "elderly_resident",
+    "label": "Elderly Resident",
+    "occupation": "Retired",
+    "income_bracket": "low-fixed",
+    "language": "Marathi",
+    "housing": "owner",
+    "ward": "197",
+    "ward_name": "Dharavi",
+    "age_bracket": "60+",
+    "dependents": 0
+  }
+]
