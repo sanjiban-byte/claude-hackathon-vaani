@@ -1,7 +1,9 @@
 # Vaani — Democratic Signal Engine
 
-WebApp Link: https://vaani-neon.vercel.app
+WebApp Link: https://vaani-neon.vercel.app 
+
 API: https://claude-hackathon-vaani-production.up.railway.app
+
 API Docs: https://claude-hackathon-vaani-production.up.railway.app/docs
 
 > *Structured citizen voice reaching the decisions that affect their lives.*
