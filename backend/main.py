@@ -41,7 +41,7 @@ def _load_json(filename: str):
 async def lifespan(app: FastAPI):
     print("🚀 Vaani backend starting up...")
     try:
-        n = ingest_pdfs()
+        n = ingest_pdfs(force=False)
         print(f"✅ RAG index ready — {n} chunks")
     except Exception as e:
         print(f"⚠️  RAG ingestion warning: {e}")
