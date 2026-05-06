@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const API = "http://localhost:8000"
+const API = "https://claude-hackathon-vaani-production.up.railway.app"
 
 function Tag({ children, color = "#FF6B00" }) {
   return (
