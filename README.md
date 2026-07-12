@@ -20,21 +20,21 @@ A bill gets proposed. Citizens don't know. No one asks them. The decision gets m
 
 The numbers behind this:
 - **59%** of people across 24 countries believe their government doesn't care what they think *(Pew Research, 2023)*
-- India's **74th Amendment** (1992) mandated ward-level citizen participation — it is 33 years old and functionally unimplemented
-- In **78%** of South Asian flood responses, aid was shaped by political proximity, not documented need — because no structured channel existed *(Int'l Journal of Disaster Risk Reduction, 2021)*
-- Structured trade-off questions produce consensus in **70%** of cases that appear as intractable conflict — polarisation is partly an interface problem *(vTaiwan/Polis, 2014–2018)*
+- India's **74th Amendment** (1992) mandated ward-level citizen participation - it is 33 years old and functionally unimplemented
+- In **78%** of South Asian flood responses, aid was shaped by political proximity, not documented need - because no structured channel existed *(Int'l Journal of Disaster Risk Reduction, 2021)*
+- Structured trade-off questions produce consensus in **70%** of cases that appear as intractable conflict - polarisation is partly an interface problem *(vTaiwan/Polis, 2014–2018)*
 
 ---
 
 ## What Vaani Does
 
-Vaani is a **two-speed democratic signal engine**. One shared AI core, two interfaces, one purpose — structured citizen voice reaching the decisions that affect their lives.
+Vaani is a **two-speed democratic signal engine**. One shared AI core, two interfaces, one purpose - structured citizen voice reaching the decisions that affect their lives.
 
 ### Legislative Mode *(slow democracy — weeks)*
 A ward policy is proposed → Vaani parses the document → identifies who is affected → generates personalised trade-off questions per citizen profile → collects structured responses → detects silence → produces a structured brief for government before the vote.
 
 ### Crisis Mode *(fast democracy — hours)*
-Same engine, compressed time window. Voice-first input. Real-time clustering. Brief regenerated every 3 hours. Designed for floods, public health emergencies, communal incidents — situations where the standard consultation timeline collapses but democratic accountability still matters.
+Same engine, compressed time window. Voice-first input. Real-time clustering. Brief regenerated every 3 hours. Designed for floods, public health emergencies, communal incidents - situations where the standard consultation timeline collapses but democratic accountability still matters.
 
 ---
 
@@ -68,7 +68,7 @@ OUTPUT LAYER
 ```
 
 ### The Transparency Guarantee
-Every brief sent to government is simultaneously published on the citizen-facing side. Suppression is architecturally impossible — any citizen can verify what was sent on their behalf.
+Every brief sent to government is simultaneously published on the citizen-facing side. Suppression is architecturally impossible: any citizen can verify what was sent on their behalf.
 
 ---
 
@@ -83,7 +83,7 @@ Every brief sent to government is simultaneously published on the citizen-facing
 | Question Generator | `claude-sonnet-4-20250514` | Generate 3 personalised trade-off questions per citizen profile based on impacts |
 | Response Clusterer | `claude-haiku-4-5-20251001` | Cluster citizen responses into themes → executive summary for councillor |
 
-Why Claude specifically: Constitutional AI alignment matters for a civic tool. Claude is less likely to hallucinate policy details or generate politically leading questions — a real risk when generating consultation questions for government decisions affecting people's livelihoods.
+Why Claude specifically: Constitutional AI alignment matters for a civic tool. Claude is less likely to hallucinate policy details or generate politically leading questions - a real risk when generating consultation questions for government decisions affecting people's livelihoods.
 
 ### Hybrid RAG Pipeline — BM25 + Vector Search
 
@@ -104,9 +104,9 @@ Query → [Vector retriever (k=5)] ────────────┘
 
 **Why hybrid matters:** A query like *"What was the road maintenance budget in 2022-23?"* requires matching the year string `2022-23` exactly (BM25) AND understanding that `Road Maintenance` is semantically related to infrastructure expenditure (vector). Neither alone is sufficient.
 
-### Silence Detector — No LLM Required
+### Silence Detector - No LLM Required
 
-The most structurally novel feature. No LLM is used here — intentionally.
+The most structurally novel feature. No LLM is used here. 
 
 ```python
 participation_pct = (actual_responses / expected_min) * 100
@@ -120,11 +120,11 @@ if pct ≥ 25% → ✅ ADEQUATE
 
 Missing data is treated as a **democratic signal**, not a gap. The system flags which groups are absent and forces government to acknowledge that silence before proceeding. No other civic tech platform does this.
 
-The three possible interpretations of silence — low awareness, unwillingness to participate, or complete satisfaction — are explicitly surfaced in the flag message. The system does not claim to know which; it claims the silence is unverified and therefore any decision made over it is made without consent.
+The three possible interpretations of silence: low awareness, unwillingness to participate, or complete satisfaction are explicitly surfaced in the flag message. The system does not claim to know which; it claims the silence is unverified and therefore any decision made over it is made without consent.
 
 ### HuggingFace Embeddings (Local)
 
-`sentence-transformers/all-MiniLM-L6-v2` runs entirely locally — no API calls, no rate limits, no cost. Downloads once (~80MB), cached permanently. Converts text chunks to 384-dimensional vectors for semantic retrieval.
+`sentence-transformers/all-MiniLM-L6-v2` runs entirely locally; no API calls, no rate limits, no cost. Downloads once (~80MB), cached permanently. Converts text chunks to 384-dimensional vectors for semantic retrieval.
 
 ---
 
@@ -148,23 +148,23 @@ The three possible interpretations of silence — low awareness, unwillingness t
 ## Features
 
 ### Citizen View
-- **Personalised profile system** — 5 citizen archetypes (Auto Driver, Street Vendor, Homeowner, Tenant, Senior Citizen) each generating different questions from the same policy document
-- **Proposal stage bar** — real-time countdown to General Body Meeting vote
-- **AI-generated trade-off questions** — Claude reads the BMC PDF, extracts impacts per demographic, generates conjoint-style questions specific to that citizen's livelihood
-- **RAG Q&A** — ask anything about the proposal in plain language; answers cite specific PDF page and document
-- **Hybrid search** — BM25 + vector catches both semantic queries and exact budget references
-- **Government scheme matching** — profile-matched central/state schemes with eligibility indicators (✓/✗/?) and clarification modals for partial matches
-- **Submission history** — track what you've submitted to the ward brief
-- **Multilingual** — full UI and AI responses in English, Hindi (Devanagari), and Marathi
-- **Admin PDF upload** — upload new policy documents → auto-ingested into RAG pipeline in ~30 seconds
+- **Personalised profile system** - 5 citizen archetypes (Auto Driver, Street Vendor, Homeowner, Tenant, Senior Citizen) each generating different questions from the same policy document
+- **Proposal stage bar** - real-time countdown to General Body Meeting vote
+- **AI-generated trade-off questions** - Claude reads the BMC PDF, extracts impacts per demographic, generates conjoint-style questions specific to that citizen's livelihood
+- **RAG Q&A** - ask anything about the proposal in plain language; answers cite specific PDF page and document
+- **Hybrid search** - BM25 + vector catches both semantic queries and exact budget references
+- **Government scheme matching** - profile-matched central/state schemes with eligibility indicators (✓/✗/?) and clarification modals for partial matches
+- **Submission history** - track what you've submitted to the ward brief
+- **Multilingual** - full UI and AI responses in English, Hindi (Devanagari), and Marathi
+- **Admin PDF upload** - upload new policy documents → auto-ingested into RAG pipeline in ~30 seconds
 
 ### Government View
-- **Response clustering** — citizen responses grouped into 5 concern themes with demographic breakdown, representative quotes, sentiment analysis
-- **Executive summary** — 3-sentence councillor brief generated by Claude Haiku
-- **Silence Detector** — identifies which demographic groups are underrepresented with participation percentages and contextual messages
-- **Minority positions panel** — logged separately, cannot be dismissed or aggregated away
-- **Crisis Mode toggle** — activates 30-second auto-refresh cycle with live indicator
-- **PDF brief download** — formatted, branded ward brief with all data — suitable for official record
+- **Response clustering** - citizen responses grouped into 5 concern themes with demographic breakdown, representative quotes, sentiment analysis
+- **Executive summary** - 3-sentence councillor brief generated by Claude Haiku
+- **Silence Detector** - identifies which demographic groups are underrepresented with participation percentages and contextual messages
+- **Minority positions panel** - logged separately, cannot be dismissed or aggregated away
+- **Crisis Mode toggle** - activates 30-second auto-refresh cycle with live indicator
+- **PDF brief download** - formatted, branded ward brief with all data — suitable for official record
 
 ---
 
@@ -293,7 +293,7 @@ Open `http://localhost:5173`
 
 **Transparency is architectural, not policy.** The brief sent to government is simultaneously readable by citizens. No suppression is technically possible.
 
-**Silence is honest.** We do not claim to know why a group is silent — only that they are, and that a decision made over that silence is unverified.
+**Silence is honest.** We do not claim to know why a group is silent - only that they are, and that a decision made over that silence is unverified.
 
 **Minority positions cannot be dismissed.** Logged separately in the government brief with a structural guarantee that they are preserved in the record regardless of majority sentiment.
 
@@ -322,8 +322,8 @@ Built at AIC × Anthropic Claude Hackathon 2025.
 
 ## License
 
-MIT License — open for ward offices, NGOs, and civic technologists to adapt.
+MIT License - open for ward offices, NGOs, and civic technologists to adapt.
 
 ---
 
-*"Every other platform helps citizens understand government. We built the first one that helps government understand citizens — and holds it accountable for what it heard."*
+*"Every other platform helps citizens understand government. We built the first one that helps government understand citizens, and holds it accountable for what it heard."*
